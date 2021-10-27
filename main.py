@@ -12,7 +12,7 @@ parser.add_argument('-w', '--write_info', action='store_true')
 parser.add_argument('-i', '--show_info', action='store_true')
 
 parser.add_argument('-f', '--folder_mode', default='title', choices=['model', 'title'])
-parser.add_argument('-n', '--num_plus_model', action='store_true')
+parser.add_argument('-n', '--num_plus_model', action='store_false', help='looks like: No.1 - Anny - 48P')
 parser.add_argument('-s', '--start_page', default=1, type=int, help='this number included.')
 parser.add_argument('-e', '--end_page', default=1, type=int, help='this number included.')
 parser.add_argument('-r', '--resume_number', default=1, type=int, help='resume from this No. of album in info list.')
@@ -40,9 +40,7 @@ def main(root_html, output_folder=r'F:\Photo\test', thunder_base=r'C:\Users\qq78
 
 
 if __name__ == '__main__':
-    if args.num_plus_model:
-        args.folder_mode = 'title'
     output_folder = r'F:\Photo\test'
     root_html = 'https://www.tujigu.net/x/57/'
-    main(root_html, r'F:\Photo\test')
+    main(root_html, output_folder)
 
