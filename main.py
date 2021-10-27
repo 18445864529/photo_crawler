@@ -40,6 +40,8 @@ def main(root_html, output_folder=r'F:\Photo\test', thunder_base=r'C:\Users\qq78
 
 
 if __name__ == '__main__':
+    if args.num_plus_model:
+        args.folder_mode = 'title'
     output_folder = r'F:\Photo\test'
     root_html = 'https://www.tujigu.net/x/57/'
     main(root_html, r'F:\Photo\test')

@@ -36,8 +36,9 @@ def get_album_titles(html, num_plus_model=False):
     for string in strings:
         start = string.find('blank">')
         end = string.find('</a></p>')
-        titles.append(string[start + 14:end - 4])
+        titles.append(string[start + 7:end])
         num_pattern = re.compile(r'No.{0,3}\d{1,5}', flags=re.I)
+        print(string)
         try:
             number = re.search(num_pattern, string).group()
         except:
